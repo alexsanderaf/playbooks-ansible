@@ -66,4 +66,4 @@
       systemd:
         name: zabbix-agent2
         enabled: yes
-        state: started
+        state: restarted
