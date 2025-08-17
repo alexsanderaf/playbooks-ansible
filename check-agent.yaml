@@ -1,0 +1,11 @@
+---
+- name: Instalar e configurar Zabbix Agent 2
+  hosts: agent
+  become: yes
+
+  tasks:
+    - name: Check zabbix agent availability
+      systemd:
+        name: zabbix-agent2
+        enabled: yes
+        state: started
