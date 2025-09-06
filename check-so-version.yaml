@@ -1,0 +1,8 @@
+---
+- name: Identificar SO e versão
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Mostrar sistema operacional e versão
+      debug:
+        msg: "O sistema operacional é {{ ansible_distribution }} {{ ansible_distribution_version }}"
