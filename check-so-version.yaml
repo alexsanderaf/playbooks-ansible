@@ -6,3 +6,8 @@
     - name: Mostrar sistema operacional e versão
       debug:
         msg: "O sistema operacional é {{ ansible_distribution }} {{ ansible_distribution_version }}"
+    
+    - name: Teste when
+      debug:
+        msg: "Deu certo"
+      when: ansible_distribution == "OracleLinux" and ansible_distribution_version is version('8', '>=')
