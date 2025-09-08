@@ -11,7 +11,7 @@
 
     - name: Adicionar repositório do Zabbix (Debian/Ubuntu)
       apt:
-        name: "http://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+{{ ansible_distribution|lower }}{{ ansible_distribution_version|lower}}_all.deb"
+        deb: "http://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+{{ ansible_distribution|lower }}{{ ansible_distribution_version|regex_replace('\\.', '') }}_all.deb"
         state: present
        
       when: ansible_os_family == "Debian"
