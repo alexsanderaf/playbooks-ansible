@@ -9,5 +9,5 @@
     
     - name: Version
       debug:
-        msg: "Deu certo {{ansible_facts}} " 
+        msg: "Deu certo {{os_family}} " 
       when: ansible_distribution == "OracleLinux" and ansible_distribution_version is version('8', '>=')
